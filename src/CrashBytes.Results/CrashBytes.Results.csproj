@@ -8,9 +8,9 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>CrashBytes.Results</PackageId>
-    <Version>0.1.0</Version>
     <Authors>CrashBytes</Authors>
     <Company>CrashBytes</Company>
+    <Copyright>Copyright (c) 2026 CrashBytes</Copyright>
     <Description>A lightweight Result and Option pattern for .NET with fluent chaining and ASP.NET Problem Details mapping.</Description>
     <PackageTags>result;option;maybe;railway;error-handling;problem-details</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,6 +18,14 @@
     <RepositoryUrl>https://github.com/CrashBytes/CrashBytes.Results</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Symbol packages for source debugging -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="5.*" PrivateAssets="All" />
+  </ItemGroup>
 
 </Project>
