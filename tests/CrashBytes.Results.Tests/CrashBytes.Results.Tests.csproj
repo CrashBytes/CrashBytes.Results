@@ -25,4 +25,9 @@
     <ProjectReference Include="..\..\src\CrashBytes.Results\CrashBytes.Results.csproj" />
   </ItemGroup>
 
+  <!-- Required to consume the ASP.NET Core integration types (ProblemDetails / IActionResult / IResult). -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0' OR '$(TargetFramework)' == 'net9.0'">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
 </Project>

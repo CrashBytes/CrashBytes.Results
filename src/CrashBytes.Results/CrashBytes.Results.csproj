@@ -28,4 +28,14 @@
     <PackageReference Include="MinVer" Version="7.0.0" PrivateAssets="all" />
   </ItemGroup>
 
+  <!--
+    ASP.NET Core integration (ProblemDetails / IActionResult / IResult mapping).
+    Uses a FrameworkReference so we don't drag in a transitive NuGet for ASP.NET;
+    consumers already running on the ASP.NET Core shared framework get this for free,
+    and pure-BCL consumers still get the package without bloat.
+  -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0' OR '$(TargetFramework)' == 'net9.0'">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
 </Project>
